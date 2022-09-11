@@ -29,7 +29,7 @@ namespace HealthDataFinder.Domain.Models
 
         public Address(string cep, string street, string complement, string neighborhood, string city, string state)
         {
-            Cep = cep;
+            Cep = Extensions.Mask.UnmaskOnlyNumbers(cep);
             Street = street;
             Complement = complement;
             Neighborhood = neighborhood;
